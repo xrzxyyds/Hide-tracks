@@ -1,5 +1,3 @@
-# Hide-tracks
-Hide traces of your operations on some Linux systems  
 脚本说明：
 清除 Bash 历史：删除所有用户和 root 的命令历史文件，包括当前会话的 Bash 历史。
 清除系统日志：清除各种常见的系统日志文件，包括登录记录、认证日志、内核日志、系统消息日志等。
