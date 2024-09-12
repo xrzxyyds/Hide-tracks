@@ -1,2 +1,34 @@
 # Hide-tracks
-Hide traces of your operations on some Linux systems
+Hide traces of your operations on some Linux systems  
+脚本说明：
+清除 Bash 历史：删除所有用户和 root 的命令历史文件，包括当前会话的 Bash 历史。
+清除系统日志：清除各种常见的系统日志文件，包括登录记录、认证日志、内核日志、系统消息日志等。
+禁用审计日志：禁用 auditd 审计日志并清空其内容。
+清除临时文件和缓存：删除 /tmp 和 /var/tmp 目录中的临时文件。
+覆盖删除日志文件：使用 shred 命令覆盖并删除日志文件，防止日志恢复。
+清除计划任务日志：删除与 cron 相关的计划任务日志。
+删除远程日志传输：如果系统配置了远程日志传输，脚本会尝试移除 rsyslog 中相关的配置。
+删除系统快照和备份：脚本尝试删除 LVM 快照（具体快照名称需替换），并清理可能存在的备份目录。
+强制同步磁盘：确保删除的文件不会保留在文件系统的缓存中。
+注意事项：
+远程日志和备份：如果系统配置了远程日志传输或定期备份，删除本地日志文件后，操作记录仍可能存在于远程服务器或备份文件中。
+不可恢复的删除：使用 shred 命令覆盖删除的文件，增加恢复难度，但这仅限于本地日志文件。
+系统稳定性风险：删除系统日志和禁用审计可能影响系统的安全和稳定，管理员通常会监控这些操作。
+在执行该脚本之前，请确认了解其后果，因为删除系统日志和记录文件可能违反安全规定，并可能导致系统不可恢复的故障。
+以下是可以运行该脚本的 Linux 操作系统列表，包括常见的发行版和系统：
+支持的 Linux 操作系统列表
+Ubuntu 系列：
+Ubuntu
+Ubuntu Server
+Linux Mint
+Kubuntu
+Xubuntu
+Lubuntu
+Debian 系列：
+Debian
+Devuan
+CentOS 系列：
+CentOS
+CentOS Stream
+AlmaLinux
+Rocky Linux
